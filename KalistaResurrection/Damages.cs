@@ -42,9 +42,9 @@ namespace KalistaResurrection
 
             if (buff != null || customStacks > -1)
             {
-                return (rawRendDamage[SpellManager.E.Level - 1] + rawRendDamageMultiplier[SpellManager.E.Level - 1] * Player.TotalAttackDamage()) * 0.90 + // Base damage
+                return (rawRendDamage[SpellManager.E.Level - 1] + rawRendDamageMultiplier[SpellManager.E.Level - 1] * Player.TotalAttackDamage() * 0.90) + // Base damage
                        ((customStacks < 0 ? buff.Count : customStacks) - 1) * // Spear count
-                       (rawRendDamagePerSpear[SpellManager.E.Level - 1] + rawRendDamagePerSpearMultiplier[SpellManager.E.Level - 1] * Player.TotalAttackDamage()) * 0.90; // Damage per spear
+                       (rawRendDamagePerSpear[SpellManager.E.Level - 1] + rawRendDamagePerSpearMultiplier[SpellManager.E.Level - 1] * Player.TotalAttackDamage() * 0.90); // Damage per spear
             }
 
             return 0;
